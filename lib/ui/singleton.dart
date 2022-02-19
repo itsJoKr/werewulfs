@@ -4,5 +4,5 @@ class Singleton {
 
   static final Singleton instance = Singleton._privateConstructor();
 
-  int time = 10;
+  int time = 3;
 }

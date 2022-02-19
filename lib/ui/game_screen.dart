@@ -18,7 +18,7 @@ class _GameScreenState extends State<GameScreen> {
 
   late TextEditingController _controller;
   late Timer timer;
-  AudioPlayer audioPlayer = AudioPlayer(mode: PlayerMode.LOW_LATENCY);
+  AudioPlayer audioPlayer = AudioPlayer();
 
   bool isNight = false;
 
@@ -98,6 +98,12 @@ class _GameScreenState extends State<GameScreen> {
   }
 
   playLocal() async {
-    await audioPlayer.play('/assets/shorter.mp3', isLocal: true);
+
+    AudioCache player = AudioCache();
+    // or as a local variable
+    final player2 = AudioCache();
+
+    // call this method when desired
+    player2.play('shorter.mp3');
   }
 }
